@@ -10,6 +10,9 @@ You will need to compile the program with GTK
 
 INSTALLATION
     gcc -o cgapplet cgapplet.c -Wall `pkg-config --cflags --libs gtk+-3.0` -export-dynamic
+
     sudo mkdir /usr/local/cgapplet
+
     sudo mv * /usr/cgapplet/cgapplet
+    
     sudo cp cgapplet.desktop /usr/share/applications
