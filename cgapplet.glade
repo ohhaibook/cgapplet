@@ -65,7 +65,7 @@
           <object class="GtkImage" id="flagImage">
             <property name="visible">True</property>
             <property name="can_focus">False</property>
-            <property name="pixbuf">resources/de.png</property>
+            <property name="pixbuf">resources/_earth_pernefeldt.png</property>
           </object>
           <packing>
             <property name="expand">False</property>

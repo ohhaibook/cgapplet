@@ -75,7 +75,7 @@ void populateCountryArray(char* filePath){
   while (fgets(line, sizeof(line), file)) {
     /* note that fgets don't strip the terminating \n, checking its
        presence would allow to handle lines longer that sizeof(line) */
-    printf("line %d reads: %s", i, line);
+    verbosePrint("line %d reads: %s", i, line);
     strcpy(countryCityArray[i][0], strtok(line, "\n"));
     i++;
   }
@@ -224,33 +224,43 @@ void populateCountryList() {
 void populateCityList() {
   gtk_combo_box_text_remove_all(cityList);
   gtk_combo_box_text_prepend(cityList, "0", "Any City");
+  if(strcmp(gtk_combo_box_text_get_active_text(countryList), "Any Country")) {
   char cmd[MAXCHAR];
-  sprintf(cmd, "%s %s %s", "cyberghostvpn --country-code", getSelectedCountryID(), "| grep -E '[0-9]{1}' | tr -d '| [0-9]%' | wc -l");
-  char cityListFile[MAXCHAR] = "/tmp/cgapplet-citylist";
-  int numCities = atoi(execCmdReturnOutput(cmd, cityListFile));
-  verbosePrint("number of cities detected: %d", numCities);
-  sprintf(cmd, "%s %s %s", "cyberghostvpn --country-code", getSelectedCountryID(),"| grep -E '[0-9]{1}' | tr -d '| [0-9]%'");
-  cmdToTempFile(cmd, cityListFile);
-  strcat(cityListFile, timeCode);
-  for(int i = 0; i < numCities; i++) {
+    sprintf(cmd, "%s %s %s", "cyberghostvpn --country-code", getSelectedCountryID(), "| grep -E '[0-9]{1}' | tr -d '| [0-9]%' | wc -l");
+    char cityListFile[MAXCHAR] = "/tmp/cgapplet-citylist";
+    int numCities = atoi(execCmdReturnOutput(cmd, cityListFile));
+    verbosePrint("number of cities detected: %d", numCities);
+    sprintf(cmd, "%s %s %s", "cyberghostvpn --country-code", getSelectedCountryID(),"| grep -E '[0-9]{1}' | tr -d '| [0-9]%'");
+    cmdToTempFile(cmd, cityListFile);
+    strcat(cityListFile, timeCode);
+    for(int i = 0; i < numCities; i++) {
       char cityListLineFile[MAXCHAR] = "/tmp/cgapplet-citylistline";
       char lineNumber[3]="";
       sprintf(lineNumber, "%d", i+1);
       sprintf(cmd, "%s%s%s%s%s", "cat '", cityListFile, "' | awk '{if(NR==", lineNumber, ") print $0}'");
       verbosePrint("executing bash: %s", cmd);
       gtk_combo_box_text_append(cityList, lineNumber, execCmdReturnOutput(cmd, cityListLineFile));
+    }
   }
 }
 
 void countrySelected() {
   char flagPath[MAXCHAR];
-  char flagID[3];
-  strcpy(flagID, getSelectedCountryID());
-  for(int i = 0; flagID[i]; i++){
-    flagID[i] = tolower(flagID[i]);
+  char flagID[40];
+
+  if(!strcmp(gtk_combo_box_text_get_active_text(countryList), "Any Country")) {
+    strcpy(flagID, "_earth_pernefeldt");
+  } else {
+    strcpy(flagID, getSelectedCountryID());
+    for(int i = 0; flagID[i]; i++){
+      flagID[i] = tolower(flagID[i]);
+    }
   }
+
   sprintf(flagPath, "%s%s%s", "resources/", flagID, ".png");
   verbosePrint("flagPath is %s", flagPath);
+
+
   gtk_image_set_from_file(flagIcon, getFilePath(flagPath));
   populateCityList();
 }
