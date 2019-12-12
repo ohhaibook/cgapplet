@@ -301,6 +301,7 @@ int main(int argc, char *argv[])
   gtk_builder_add_from_file (builder, getFilePath("cgapplet.ui"), NULL);//"/home/ohhaibook/Nextcloud/Coding/c/cgapplet/cgappletv2.glade", NULL);
   window = GTK_WIDGET(gtk_builder_get_object(builder, "cgappletWindow"));
   aboutDialog = GTK_DIALOG(gtk_builder_get_object(builder, "aboutDialog"));
+  // gtk_widget_hide_on_delete(GTK_WIDGET(aboutDialog));
   // statusIcon = GTK_STATUS_ICON(gtk_builder_get_object(builder, "statusIcon"));
   label1 = GTK_WIDGET(gtk_builder_get_object(builder, "label1"));
   labelStatusMessage = GTK_WIDGET(gtk_builder_get_object(builder, "statusMessage"));
