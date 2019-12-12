@@ -2,7 +2,7 @@
 Name=CGApplet
 Comment=cgapplet2 dev
 Keywords=vpn;manager;
-Exec=/home/ohhaibook/Nextcloud/Coding/c/cgapplet2/cgapplet2
+Exec=/usr/local/cgapplet/cgapplet
 Icon=security-high
 Terminal=false
 Type=Application
