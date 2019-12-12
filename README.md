@@ -3,3 +3,5 @@ CGApplet is a tool that is designed to integrate with command line VPN utilities
 Currently it only supports cyberghostvpn.
 
 First you must install the cyberghostvpn command line utility. You will also have to exempt the cyberghostvpn program from requiring a password for sudo.
+
+one change
