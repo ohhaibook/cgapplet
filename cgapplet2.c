@@ -19,7 +19,8 @@ char timeCode[MAXCHAR] = "default";
 char pwdPromptCmd[MAXCHAR];
 bool verbose = FALSE;
 bool connectedToVPN;
-GtkWidget *window, *aboutDialog, *label1, *labelStatusMessage;
+GtkWidget *window, *label1, *labelStatusMessage;
+GtkDialog *aboutDialog;
 GtkComboBoxText *countryList, *cityList;
 // GtkStatusIcon *statusIcon;
 GtkImage *flagIcon;
@@ -299,7 +300,7 @@ int main(int argc, char *argv[])
   builder = gtk_builder_new();
   gtk_builder_add_from_file (builder, getFilePath("cgapplet.ui"), NULL);//"/home/ohhaibook/Nextcloud/Coding/c/cgapplet/cgappletv2.glade", NULL);
   window = GTK_WIDGET(gtk_builder_get_object(builder, "cgappletWindow"));
-  aboutDialog = GTK_WIDGET(gtk_builder_get_object(builder, "aboutDialog"));
+  aboutDialog = GTK_DIALOG(gtk_builder_get_object(builder, "aboutDialog"));
   // statusIcon = GTK_STATUS_ICON(gtk_builder_get_object(builder, "statusIcon"));
   label1 = GTK_WIDGET(gtk_builder_get_object(builder, "label1"));
   labelStatusMessage = GTK_WIDGET(gtk_builder_get_object(builder, "statusMessage"));
@@ -339,7 +340,8 @@ void connectToVPN() {
 }
 
 void showAboutDialog() {
-  gtk_widget_show(aboutDialog);
+  // gtk_widget_show(aboutDialog);
+  gtk_dialog_run(aboutDialog);
 }
 
 // exit function
