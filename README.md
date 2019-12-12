@@ -4,4 +4,4 @@ Currently it only supports cyberghostvpn.
 
 First you must install the cyberghostvpn command line utility. You will also have to exempt the cyberghostvpn program from requiring a password for sudo.
 
-one change
+You will need to compile the program with GTK
