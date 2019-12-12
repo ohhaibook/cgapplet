@@ -1,3 +1,5 @@
+![cgapplet screenshot](https://www.dropbox.com/s/ipx19f2kih24u3j/cgapplet.png?dl=1)
+
 CGApplet is a tool that is designed to integrate with command line VPN utilities for third party VPN providers. It is essentially a graphical wrapper for the command line utility.
 
 Currently it only supports cyberghostvpn.
