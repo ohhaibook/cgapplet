@@ -1,3 +1,5 @@
+#!/bin/bash
+
 echo Removing cgapplet directory in case of older install...
 sudo rm -rf /usr/local/cgapplet
 
