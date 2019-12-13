@@ -6,10 +6,12 @@ CGApplet is a tool that is designed to integrate with command line VPN utilities
 
 Currently it only supports cyberghostvpn.
 
-## Future features
+## Future features/known bugs
 
 * Add support for text file definitions that allow the program to integrate with other command line utilities simply by loading the definitions into the program
 * Add support for openvpn files
+* Fix any country, any city selections so that they actually work
+* Options menu with certain options such as restart network manager on disconnect
 
 # Installation
 
