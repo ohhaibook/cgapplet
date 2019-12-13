@@ -1,4 +1,6 @@
+<p align="center">
 ![cgapplet screenshot](https://i.ibb.co/h833FvC/cgapplet.png)
+</p>
 
 # About the project
 
