@@ -10,6 +10,7 @@ Currently it only supports cyberghostvpn.
 
 * Add support for text file definitions that allow the program to integrate with other command line utilities simply by loading the definitions into the program
 * Add support for openvpn files
+* Clean up country list
 * Fix any country, any city selections so that they actually work
 * Options menu with certain options such as restart network manager on disconnect
 
