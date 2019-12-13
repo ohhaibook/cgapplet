@@ -226,7 +226,7 @@ void populateCityList() {
   gtk_combo_box_text_remove_all(cityList);
   gtk_combo_box_text_prepend(cityList, "0", "Any City");
   if(strcmp(gtk_combo_box_text_get_active_text(countryList), "Any Country")) {
-  char cmd[MAXCHAR];
+  char cmd[MAXCHAR*2];
     sprintf(cmd, "%s %s %s", "cyberghostvpn --country-code", getSelectedCountryID(), "| grep -E '[0-9]{1}' | tr -d '| [0-9]%' | wc -l");
     char cityListFile[MAXCHAR] = "/tmp/cgapplet-citylist";
     int numCities = atoi(execCmdReturnOutput(cmd, cityListFile));
