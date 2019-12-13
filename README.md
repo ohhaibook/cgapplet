@@ -10,7 +10,7 @@ Currently it only supports cyberghostvpn.
 
 ## Dependencies
 
-You will need the GTK dev tools in order to compile it. As it currently only works with Cyberghost VPN via their command line utility for Linux, cyberghostvpn, you will also need to install that. It is written in Python so you may also need to install Python. Set it up with your user account. Make sure the cyberghostvpn command line utility is working before proceeding with installation.
+You will need the GTK dev tools in order to compile it. As it currently only works with Cyberghost VPN via their command line utility for Linux, cyberghostvpn, you will also need to install that. It is written in Python so you may also need to install Python. Set cyberghostvpn up with your user account. Make sure the cyberghostvpn command line utility is working before proceeding with installation.
 
 ## Step by step
 
