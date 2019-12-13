@@ -14,7 +14,7 @@
 
 // GLOBAL VARIABLES
 
-char *installDir="/home/ohhaibook/Nextcloud/Coding/c/cgapplet2/";
+char *installDir="/usr/local/cgapplet/";
 char timeCode[MAXCHAR] = "default";
 char pwdPromptCmd[MAXCHAR];
 bool verbose = FALSE;
