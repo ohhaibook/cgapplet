@@ -31,8 +31,10 @@ git clone https://github.com/ohhaibook/cgapplet.git
 cd cgapplet
 
 chmod a+X install.sh && bash install.sh
+
+cd ..
 ```
 ## One line installation command
 ```
-git clone https://github.com/ohhaibook/cgapplet.git && cd cgapplet && chmod a+X install.sh && bash install.sh
+git clone https://github.com/ohhaibook/cgapplet.git && cd cgapplet && chmod a+X install.sh && bash install.sh && cd ..
 ```
