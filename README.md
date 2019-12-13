@@ -1,25 +1,27 @@
 ![cgapplet screenshot](https://i.ibb.co/h833FvC/cgapplet.png)
 
+# About the project
+
 CGApplet is a tool that is designed to integrate with command line VPN utilities for third party VPN providers. It is essentially a graphical wrapper for the command line utility.
 
 Currently it only supports cyberghostvpn.
 
-First you must install the cyberghostvpn command line utility. You will also have to exempt the cyberghostvpn program from requiring a password for sudo.
+# Installation
 
-You will need to compile the program with GTK
+## Dependencies
 
-INSTALLATION
+You will need the GTK dev tools in order to compile it. As it currently only works with Cyberghost VPN via their command line utility for Linux, cyberghostvpn, you will also need to install that. It is written in Python so you may also need to install Python. Set it up with your user account. Make sure the cyberghostvpn command line utility is working before proceeding with installation.
 
-    sudo rm -rf /usr/local/cgapplet
+## Step by step
 
-    gcc -o cgapplet cgapplet.c -Wall `pkg-config --cflags --libs gtk+-3.0` -export-dynamic
+Then, clone the git repo and run install.sh
 
-    sudo mkdir /usr/local/cgapplet
+git clone https://github.com/ohhaibook/cgapplet.git
 
-    sudo cp -r * /usr/local/cgapplet/
+cd cgapplet
 
-    sudo cp cgapplet.desktop /usr/share/applications
+chmod a+X install.sh && bash install.sh
 
-OR AS A ONE LINER
+## One line installation command
 
-sudo rm -rf /usr/local/cgapplet && gcc -o cgapplet cgapplet.c -Wall `pkg-config --cflags --libs gtk+-3.0` -export-dynamic && sudo mkdir /usr/local/cgapplet && sudo cp -r * /usr/local/cgapplet/ && sudo cp cgapplet.desktop /usr/share/applications
+git clone https://github.com/ohhaibook/cgapplet.git && cd cgapplet && chmod a+X install.sh && bash install.sh
