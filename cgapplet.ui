@@ -24,7 +24,6 @@
     <property name="title" translatable="yes">CGApplet</property>
     <property name="default_width">800</property>
     <property name="default_height">400</property>
-    <property name="icon">cyberghost_logo_1024.png</property>
     <signal name="destroy" handler="exitCgapplet" swapped="no"/>
     <child type="titlebar">
       <object class="GtkHeaderBar" id="headerBar">
