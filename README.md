@@ -30,7 +30,9 @@ git clone https://github.com/ohhaibook/cgapplet.git
 
 cd cgapplet
 
-chmod a+X install.sh && bash install.sh
+chmod a+X install.sh
+
+bash install.sh
 
 cd ..
 
