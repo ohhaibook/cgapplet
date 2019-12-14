@@ -12,7 +12,7 @@ Currently it only supports cyberghostvpn.
 * Add support for openvpn files
 * Clean up country list
 * Have program automatically exempt cyberghostvpn from sudo
-* Fix about dialog only showing once
+* Fix about dialog close button
 * Fix any country, any city selections so that they actually work
 * Options menu with certain options such as restart network manager on disconnect
 
