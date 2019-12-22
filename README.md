@@ -24,7 +24,7 @@ You will need the GTK dev tools in order to compile it. As it currently only wor
 
 ## Step by step
 
-Then, clone the git repo and run install.sh
+Then, clone the git repo and run the install bash script
 ```
 git clone https://github.com/ohhaibook/cgapplet.git
 
